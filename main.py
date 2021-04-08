@@ -89,7 +89,7 @@ def request():
         logging.error(e)
         sys.exit(e)
     try:
-        writer = pd.ExcelWriter('/Users/zhihuiwu/Documents/schindler/建照/df.xlsx', engine = 'xlsxwriter')
+        writer = pd.ExcelWriter('df.xlsx', engine = 'xlsxwriter')
         df1.to_excel(writer, sheet_name='Sheet1')
         # Get the xlsxwriter objects from the dataframe writer object.
         workbook  = writer.book
