@@ -44,7 +44,7 @@ def mailInit():
         </body>
     </html>
     """
-    logging.info('email info: \n{}'.format(content))
+    logging.info('email info: \nsubject:{}\nfrom:{}to:\n'.format(content['subject'],content['from'],content['to']))
     body = MIMEText(html, 'html')
     content.attach(body)
     return content
@@ -54,7 +54,7 @@ def sendMail(content):
         try:
             smtp.ehlo()  # 驗證SMTP伺服器
             smtp.starttls()  # 建立加密傳輸
-            smtp.login(email, password)  # 登入寄件者gmail
+            smtp.login(email, password)  # 登入寄件者
             smtp.send_message(content)  # 寄送郵件
             logging.info('Mail Sending Completed.')
         except Exception as e:

@@ -1,4 +1,6 @@
 # 建築商情資料爬去/定期寄信通知
+Medium:https://medium.com/%E4%B8%80%E5%80%8B%E8%B3%87%E7%AE%A1%E5%AD%B8%E7%94%9F%E7%9A%84%E7%A7%81%E5%AF%86%E8%99%95/%E5%BB%BA%E7%AF%89%E5%95%86%E6%83%85%E8%B3%87%E6%96%99-%E5%BB%BA%E7%AF%89%E5%9F%B7%E7%85%A7-python%E7%88%AC%E8%9F%B2%E4%B8%A6%E9%80%8F%E9%81%8Esmtp%E4%BB%A5outlook%E5%AF%84%E4%BF%A1%E9%80%9A%E7%9F%A5-a414549c9ff4
+
 Python Modules：
 > beautifulsoup4==4.9.3
 > certifi==2020.12.5
