@@ -50,7 +50,7 @@ def mailInit():
     return content
 def sendMail(content):
     logging.info('Sendding Mail Process Start.')
-    with smtplib.SMTP(host="smtp.office365.com", port="587") as smtp:  # 設定SMTP伺服器
+    with smtplib.SMTP(host="smtp.gmail.com", port="587") as smtp:  # 設定SMTP伺服器
         try:
             smtp.ehlo()  # 驗證SMTP伺服器
             smtp.starttls()  # 建立加密傳輸
@@ -64,11 +64,14 @@ def request():
     url = "https://cpabm.cpami.gov.tw/e_help.jsp"
     r = requests.get(url)
     soup = bs(r.text, 'html.parser')
-    a = soup.find_all('a')
+    trs = soup.select("tr[class*=list]")
     links = []
-    for A in a:
-        if('資料下載' in A):
-            links.append(A.get('href'))
+
+    for tr in trs:
+        tds = tr.select("td")
+        for i,td in enumerate(tds):
+            if td.find('a') and i==1:
+                links.append(td.find('a').get('href'))
     table = pd.read_html(links[0], header=0)
     df = table[0]
     logging.info('request processing start.')
@@ -79,6 +82,7 @@ def request():
         t = pd.read_html(link, header=0)
         df = df.append(t[0], ignore_index=True)
     logging.info('request processing finished.')
+    df=df.set_index('建造號碼')
     df1 = df
     df1['總樓層數'] = df1['地下層數']+df1['地上層數']
     df1 = df[(df['總樓層數']>2)&(df['變更次數']<4)]
@@ -95,7 +99,7 @@ def request():
         workbook  = writer.book
         worksheet = writer.sheets['Sheet1']
         # Apply the autofilter based on the dimensions of the dataframe.
-        worksheet.autofilter(0, 0, df.shape[0], df.shape[1])
+        worksheet.autofilter(0, 1, df.shape[0], df.shape[1])
         writer.save()
     except Exception as e:
         logging.error(e)
