@@ -21,7 +21,7 @@ logging.basicConfig(
 def mailInit():
     content = MIMEMultipart()  #建立MIMEMultipart物件
     content["subject"] = "建築商情資料整理"  #郵件標題
-    content["from"] = "schindler.jtpkb@outlook.com"  #寄件者
+    content["from"] = ""  #寄件者
     content["to"] = "wutiger555@gmail.com" #收件者
     
     try:
@@ -40,7 +40,6 @@ def mailInit():
             <p>附件為近3個月之全台縣市<a href="https://cpabm.cpami.gov.tw/e_help.jsp">建築商情資料</a>（建造執照）</p>
             <p>&nbsp;</p>
             <p><img src="https://gm1.ggpht.com/cgt9rFCch69zq2bmR8uzcX4pROiT4BEeDzLsHKSSNPwhS3J8lX5x8mo-WSONctoR5tZ_A4qpQnjKqJJ8Kslg_xbPlQpTFNOXSblkt5DPOmGoxF4bCu-l5ExSHSiKKt2nf6oe_7EhMksNGgfEkSc94qYlGVuARc7OyvnMePNbMgi3vTTceKbqyIx7W9rJBb3AyryPrBOvq25pE_0TdqMeVlerJ_8HqDFoPYWqL-b-8drdnoAXMOwuYQfdj_AS_jTyZzDdqqk1-0b-5MRy9f3E_vkKz65coxJAGQ9rFWaG1SN0DPbNEL4SkUsB28lcj__PnyaGJTsqzyFoOkXS6rarJOb85ylnR7ZDfFQ6rbGq3HIwWgDNbN2i6qkn7a9t0maifUz7BRGAVvsHTP25DJZtxWAX4-kcP32QlxX1PtPr8hsxGz-oGqebTe2vIO0YoNl-XJe0Gq_r2HCxWrdg1sCBHi-H8Nrp5TzrN8nKrJQ87gMAoGnvZC9TpDdrNksXGK8rUR13cUxFbsR7nmNUObVUiemv4YlQ9YRTZIGDhBt8yNsFX6BlXjEp8_x6h9xYgH1CHsg-w4XG-YJCKbCMC6owfPUgU_yxUMesKj9lklZ9XW5HqT2JtjtxqAGLutFwkhVPS6B0OyEg-SkjIlY1FQvT5FE3SYkp_mL2N4jM7evEtOIVo_X65h7YUiINhlhP8Exw2eRXj2Bza-FcQe5NLNAclZPqrkIed0m9VrqyFgxoHB4c0G7WZLuPU1yXj9O0j45TSnIG=s0-l75-ft-l75-ft" alt="" /></p>
-            <p>Jardine Schindler Lifts Limited | Jardine Schindler Lifts Ltd (Taiwan)<br />9/F, 35 Kwang Fu South Road, Taipei 105, Taiwan<br /><br /><a href="http://www.schindler.com/tw" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?q=http://www.schindler.com/tw&amp;source=gmail&amp;ust=1617928856258000&amp;usg=AFQjCNFYRvNdS4hbdPhjDjh5Nb7IW8B3Jw">www.schindler.com/tw</a><br /><br /><span style="color: #ff0000;">We Elevate&nbsp;</span></p>
         </body>
     </html>
     """
